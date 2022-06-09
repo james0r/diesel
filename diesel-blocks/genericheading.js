@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks'
 
-registerBlockType('waubleblocks/genericheading', {
+registerBlockType('dieselblocks/genericheading', {
   title: "Generic Heading",
   edit: EditComponent,
   save: SaveComponent
@@ -16,5 +16,5 @@ function EditComponent() {
 function SaveComponent() {
   return (
     <div>This is our heading block.</div>
-  )
-}
+  ) 
+} 
