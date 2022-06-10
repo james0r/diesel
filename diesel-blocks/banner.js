@@ -3,6 +3,12 @@ import { registerBlockType } from '@wordpress/blocks'
 
 registerBlockType('dieselblocks/banner', {
   title: "banner",
+  supports: {
+    align: ['full']
+  },
+  attributes: {
+    align: {type: 'string', default: 'full'}
+  },
   edit: EditComponent,
   save: SaveComponent
 })
@@ -25,7 +31,7 @@ function EditComponent() {
     <div className="page-banner">
       <div className="page-banner__bg-image" style={{ backgroundImage: "url('/wp-content/themes/diesel/images/library-hero.jpg')" }}></div>
       <div className="page-banner__content container t-center c-white">
-        <InnerBlocks allowedBlocks={['dieselblocks/genericheading']} />
+        <InnerBlocks allowedBlocks={['dieselblocks/genericheading', 'dieselblocks/genericbutton']} />
       </div>
     </div>
   )
