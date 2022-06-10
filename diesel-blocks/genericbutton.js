@@ -32,7 +32,7 @@ function EditComponent(props) {
   }
 
   function buttonHandler() {
-    setIsLinkPickerVisible((prev) => !prev)
+    setIsLinkPickerVisible(prev => !prev)
   }
 
   function handleLinkChange(newLink) {
@@ -78,11 +78,11 @@ function EditComponent(props) {
           <LinkControl
             settings={[]}
             value={props.attributes.linkObject}
-            onClick={handleLinkChange}
+            onChange={handleLinkChange}
           />
           <Button
             variant="primary"
-            onClick={setIsLinkPickerVisible(false)}
+            onClick={() => setIsLinkPickerVisible(false)}
             style={{ display: "block", width: "100%" }}
           >
             Confirm Link
@@ -95,7 +95,7 @@ function EditComponent(props) {
 
 function SaveComponent(props) {
   return (
-    <a href="#" className={`btn btn--${props.attributes.size} btn--blue`}>
+    <a href={props.attributes.linkObject.url} className={`btn btn--${props.attributes.size} btn--blue`}>
       {props.attributes.text}
     </a>
   )
