@@ -1,14 +1,11 @@
 import Swiper, { Pagination } from 'swiper'
 import 'swiper/css'
+import 'swiper/css/pagination'
 
 class Slideshow {
   constructor() {
-    if (document.querySelector(".swiper")) {
-      const swiper = new Swiper('.swiper', {
-        modules: [Pagination],
-        loop: true
-      })
-    }
+    window.Swiper = Swiper
+    window.SwiperPagination = Pagination
   }
 }
 
