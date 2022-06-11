@@ -25,11 +25,10 @@ registerBlockType("dieselblocks/slideshow", {
 })
 
 function EditComponent(props) {
-  const [ isChecked, setChecked ] = useState( true );
+  const [ isChecked, setChecked ] = useState( props.attributes.pagination );
 
-  useEffect(function() {
+  useEffect(() => {
     props.setAttributes({ pagination: isChecked })
-    props.attributes.pagination
   }, [isChecked])
 
   useEffect(function() {
