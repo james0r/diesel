@@ -15,7 +15,7 @@ registerBlockType("dieselblocks/slideshow", {
   },
   attributes: {
     align: { type: "string", default: "full" },
-    pagination: { type: "boolean" },
+    pagination: { type: "boolean", default: false },
     blockId: {
       type: 'string'
     }
