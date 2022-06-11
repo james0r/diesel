@@ -3,7 +3,7 @@ import { RichText, BlockControls } from "@wordpress/block-editor"
 import { registerBlockType } from "@wordpress/blocks"
 
 registerBlockType("dieselblocks/genericheading", {
-  title: "Generic Heading",
+  title: "Diesel Heading",
   attributes: {
     text: { type: "string" },
     size: { type: "string", default: "large" }
@@ -55,7 +55,7 @@ function EditComponent(props) {
 function SaveComponent(props) {
   function createTagName() {
     switch (props.attributes.size) {
-      case "large":
+      case "small":
         return "h1"
       case "medium":
         return "h2"

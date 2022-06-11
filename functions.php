@@ -21,10 +21,37 @@ function diesel_files() {
 
 add_action('wp_enqueue_scripts', 'diesel_files');
 
+class StaticBlock {
+  public function __construct($name) {
+    $this->name = $name;
+
+    add_action('init', [$this, 'onInit']);
+  }
+
+  public function ourRenderCallback($attributes, $content) {
+    ob_start();
+    require get_theme_file_path("/diesel-blocks/{$this->name}.php");
+    return ob_get_clean();
+  }
+
+  public function onInit() {
+    wp_register_script($this->name, get_stylesheet_directory_uri() . "/diesel-blocks/{$this->name}.js", ['wp-blocks', 'wp-editor']);
+
+    register_block_type("dieselblocks/{$this->name}", [
+      'editor_script'   => $this->name,
+      'render_callback' => [$this, 'ourRenderCallback']
+    ]);
+  }
+}
+
+new StaticBlock('eventsandblogs');
+new StaticBlock('header');
+new StaticBlock('footer');
+
 class JSXBlock {
   public function __construct($name, $renderCallback = null, $data = null) {
-    $this->name = $name;
-    $this->data = $data;
+    $this->name           = $name;
+    $this->data           = $data;
     $this->renderCallback = $renderCallback;
     add_action('init', [$this, 'onInit']);
   }
@@ -57,3 +84,16 @@ class JSXBlock {
 new JSXBlock('banner', true, ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
 new JSXBlock('genericheading');
 new JSXBlock('genericbutton');
+new JSXBlock('slideshow', true);
+new JSXBlock('slide', true);
+
+add_filter('the_content','diesel_enqueue_swiper_if_has_slideshow');
+
+function diesel_enqueue_swiper_if_has_slideshow($content = ""){
+  if(has_block('my-awesome/block-type')){
+        wp_enqueue_script('my-awesome-script',$path_of_script,$needed_scripts,$version_of_script,true);
+   //Be aware that for this to work, the load_in_footer MUST be set to true, as 
+   //the scripts for the header are already echoed out at this point
+     }
+   return $content;
+}

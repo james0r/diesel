@@ -20,7 +20,7 @@ import { registerBlockType } from "@wordpress/blocks"
 import { useState } from "@wordpress/element"
 
 registerBlockType("dieselblocks/genericbutton", {
-  title: "Generic Button",
+  title: "Diesel Button",
   attributes: {
     text: { type: "string" },
     size: { type: "string", default: "large" },
