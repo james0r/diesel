@@ -1,6 +1,6 @@
 <?php
 /**
-*  Class for Diesel blocks with no editor configurations using a PHP render callback.
+*  Class for blocks with no editor configurations using a PHP render callback.
 */
 
 class Diesel_StaticBlock {

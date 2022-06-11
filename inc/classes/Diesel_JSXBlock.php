@@ -1,6 +1,6 @@
 <?php
 /**
-*  Class for Diesel blocks requiring JSX for block edit or save functions.
+*  Class for blocks requiring JSX for block edit or save functions.
 */
 
 class Diesel_JSXBlock {
