@@ -42,5 +42,7 @@ class Diesel_Init {
     new Diesel_JSXBlock('genericbutton');
     new Diesel_JSXBlock('slideshow', true);
     new Diesel_JSXBlock('slide', true);
+    new Diesel_JSXBlock('sociallinks', true);
+    new Diesel_JSXBlock('sociallink', true);
   }
 }
