@@ -13,6 +13,8 @@ module.exports = {
 		'diesel-blocks/sociallink': './diesel-blocks/sociallink',
 		'diesel-blocks/sociallinks': './diesel-blocks/sociallinks',
 		'diesel-blocks/genericheading': './diesel-blocks/genericheading',
-		'diesel-blocks/genericbutton': './diesel-blocks/genericbutton'
+		'diesel-blocks/genericbutton': './diesel-blocks/genericbutton',
+    'diesel-blocks/page': './diesel-blocks/page',
+    'diesel-blocks/archive': './diesel-blocks/archive'
 	},
 };

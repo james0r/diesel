@@ -36,6 +36,8 @@ class Diesel_Init {
     new Diesel_StaticBlock('eventsandblogs');
     new Diesel_StaticBlock('header');
     new Diesel_StaticBlock('footer');
+    new Diesel_StaticBlock('page');
+    new Diesel_StaticBlock('archive');
 
     new Diesel_JSXBlock('banner', true, ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_JSXBlock('genericheading');

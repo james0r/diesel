@@ -20,27 +20,6 @@
   color: #FFFFFF;
 }
 
-.page-section {
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
-  @include atSmall {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-  }
-
-  &--white {
-    background-color: #fff;
-  }
-
-  &--beige {
-    background-color: $beige;
-  }
-
-  p:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
 .school-logo-text {
   position: relative;
   z-index: 20;
