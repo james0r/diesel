@@ -15,6 +15,8 @@ module.exports = {
 		'diesel-blocks/genericheading': './diesel-blocks/genericheading',
 		'diesel-blocks/genericbutton': './diesel-blocks/genericbutton',
     'diesel-blocks/page': './diesel-blocks/page',
-    'diesel-blocks/archive': './diesel-blocks/archive'
+    'diesel-blocks/archive': './diesel-blocks/archive',
+    'diesel-blocks/searchresults': './diesel-blocks/searchresults',
+    'diesel-blocks/search': './diesel-blocks/search'
 	},
 };

@@ -17,6 +17,8 @@ if (!defined('DIESEL_DEV_MODE')) {
   define('DIESEL_DEV_MODE', false);
 }
 
+require_once wp_normalize_path(get_template_directory() . '/inc/helpers.php');
+
 require_once wp_normalize_path(get_template_directory() . '/inc/classes/Diesel.php');
 
 require_once wp_normalize_path(get_template_directory() . '/inc/classes/Diesel_Autoload.php');

@@ -38,6 +38,8 @@ class Diesel_Init {
     new Diesel_StaticBlock('footer');
     new Diesel_StaticBlock('page');
     new Diesel_StaticBlock('archive');
+    new Diesel_StaticBlock('searchresults');
+    new Diesel_StaticBlock('search');
 
     new Diesel_JSXBlock('banner', true, ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_JSXBlock('genericheading');
