@@ -9,8 +9,8 @@ import {
 import { registerBlockType } from "@wordpress/blocks"
 import {useEffect} from "@wordpress/element"
 
-registerBlockType("dieselblocks/slide", {
-  title: "Diesel Slide",
+registerBlockType("dieselblocks/banner", {
+  title: "Diesel Banner",
   supports: {
     align: ["full"]
   },

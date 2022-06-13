@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/block.json",
+  "apiVersion": 2,
+  "name": "dieselblocks/eventsandblogs",
+  "title": "Diesel Events & Blogs",
+  "textdomain": "diesel",
+  "icon": "universal-access-alt",
+  "category": "",
+  "example": {},
+  "editorScript": "file:./index.js"
+}

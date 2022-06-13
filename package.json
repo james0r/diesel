@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "wp-scripts start src/index.js diesel-blocks/banner.js diesel-blocks/genericheading.js diesel-blocks/genericbutton.js diesel-blocks/slideshow.js diesel-blocks/slide.js diesel-blocks/sociallinks.js diesel-blocks/sociallink.js",
-    "dev": "wp-scripts start",
-    "devFast": "wp-scripts start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
   },
   "keywords": [],
   "author": "",
