@@ -6,5 +6,4 @@ class Diesel_Block {
     require get_theme_file_path("/diesel-blocks/{$this->name}/index.php");
     return ob_get_clean();
   }
-
 }

@@ -17,6 +17,7 @@ module.exports = {
     'diesel-blocks/page': './diesel-blocks/page',
     'diesel-blocks/archive': './diesel-blocks/archive',
     'diesel-blocks/searchresults': './diesel-blocks/searchresults',
-    'diesel-blocks/search': './diesel-blocks/search'
+    'diesel-blocks/search': './diesel-blocks/search',
+    'diesel-blocks/accordion-esc': './diesel-blocks/accordion-esc',
 	},
 };

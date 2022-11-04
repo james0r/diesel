@@ -2,7 +2,7 @@ import { ToolbarGroup, ToolbarButton } from "@wordpress/components"
 import { RichText, BlockControls } from "@wordpress/block-editor"
 import { registerBlockType } from "@wordpress/blocks"
 
-registerBlockType("dieselblocks/genericheading", {
+registerBlockType("diesel/genericheading", {
   title: "Diesel Heading",
   attributes: {
     text: { type: "string" },

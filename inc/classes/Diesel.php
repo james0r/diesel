@@ -32,7 +32,7 @@ class Diesel {
 
   // The Diesel Monolith is the Diesel instance that contains static member variables for all other class instances.
   // Here, Diesel object is instantiated from within the class itself
-  // and stored as a static variable..
+  // and stored as a static variable.
 
   public static function getInstance() {
     if (self::$instance == null) {

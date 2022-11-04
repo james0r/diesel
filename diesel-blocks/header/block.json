@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/block.json",
   "apiVersion": 2,
-  "name": "dieselblocks/header",
+  "name": "diesel/header",
   "title": "Diesel Header",
   "textdomain": "diesel",
   "icon": "universal-access-alt",

@@ -13,7 +13,7 @@ class Diesel_StaticBlock extends Diesel_Block {
   public function onInit() {
     wp_register_script($this->name, get_stylesheet_directory_uri() . "/build/diesel-blocks/{$this->name}.js", ['wp-blocks', 'wp-editor']);
 
-    register_block_type("dieselblocks/{$this->name}", [
+    register_block_type("diesel/{$this->name}", [
       'editor_script'   => $this->name,
       'render_callback' => [$this, 'diesel_block_render_callback']
     ]);

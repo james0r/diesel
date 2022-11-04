@@ -8,7 +8,7 @@ import {
 } from "@wordpress/components"
 import { useState, useEffect } from "@wordpress/element"
 
-registerBlockType("dieselblocks/slideshow", {
+registerBlockType("diesel/slideshow", {
   title: "Diesel Slideshow",
   supports: {
     align: ["full"]
@@ -54,7 +54,7 @@ function EditComponent(props) {
         <p style={{ textAlign: "center", fontSize: "20px", color: "#FFF" }}>
           Slideshow
         </p>
-        <InnerBlocks allowedBlocks={["dieselblocks/slide"]} />
+        <InnerBlocks allowedBlocks={["diesel/slide"]} />
       </div>
     </>
   )

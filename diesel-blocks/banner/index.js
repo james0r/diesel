@@ -9,7 +9,7 @@ import {
 import { registerBlockType } from "@wordpress/blocks"
 import {useEffect} from "@wordpress/element"
 
-registerBlockType("dieselblocks/banner", {
+registerBlockType("diesel/banner", {
   title: "Diesel Banner",
   supports: {
     align: ["full"]
@@ -69,8 +69,8 @@ function EditComponent(props) {
         <div className="page-banner__content container t-center c-white">
           <InnerBlocks
             allowedBlocks={[
-              "dieselblocks/genericheading",
-              "dieselblocks/genericbutton"
+              "diesel/genericheading",
+              "diesel/genericbutton"
             ]}
           />
         </div>

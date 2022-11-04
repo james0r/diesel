@@ -7,7 +7,7 @@ import { networking } from "@wordpress/icons"
 import { registerBlockType } from "@wordpress/blocks"
 import { useState } from "@wordpress/element"
 
-registerBlockType("dieselblocks/sociallink", {
+registerBlockType("diesel/sociallink", {
   title: "Diesel Social Link",
   attributes: {
     network: { type: 'string' }

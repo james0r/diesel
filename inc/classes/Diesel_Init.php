@@ -1,7 +1,6 @@
 <?php
 /**
  * This class handles general theme setup actions.
- * Handles many things often done in functions.php.
  */
 
 class Diesel_Init {
@@ -18,6 +17,7 @@ class Diesel_Init {
 
   public function diesel_disable_wp_noise() {
     remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+    remove_theme_support('core-block-patterns');
   }
 
   public function diesel_add_image_sizes() {
@@ -40,6 +40,7 @@ class Diesel_Init {
     new Diesel_StaticBlock('searchresults');
     new Diesel_StaticBlock('search');
     
+    new Diesel_JSXBlock('accordion-esc', false);
     new Diesel_JSXBlock('header', true);
     new Diesel_JSXBlock('banner', true, ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_JSXBlock('genericheading');

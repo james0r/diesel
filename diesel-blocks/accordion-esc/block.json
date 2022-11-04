@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/block.json",
   "apiVersion": 2,
-  "name": "diesel/sociallinks",
-  "title": "Diesel Social Links",
+  "name": "diesel/accordion-esc",
+  "title": "Diesel accordion-esc",
   "textdomain": "diesel",
   "icon": "universal-access-alt",
   "category": "",

@@ -13,6 +13,7 @@
   "dependencies": {
     "@wordpress/icons": "^9.1.0",
     "@wordpress/scripts": "*",
+    "alpinejs": "^3.10.5",
     "normalize.css": "^8.0.1",
     "swiper": "^8.2.3"
   }

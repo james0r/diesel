@@ -30,9 +30,3 @@ function Diesel() {
 }
 
 Diesel();
-
-function foo_gallery_render( $attributes, $content ) {
-
-	return '<h1>Custom rendered menu</h1>';
-}
-

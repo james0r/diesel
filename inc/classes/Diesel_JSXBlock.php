@@ -6,8 +6,8 @@
 class Diesel_JSXBlock extends Diesel_Block {
   public function __construct($name, $renderCallback = null, $data = null) {
     $this->name           = $name;
-    $this->data           = $data;
     $this->renderCallback = $renderCallback;
+    $this->data           = $data;
     add_action('init', [$this, 'onInit']);
   }
 
@@ -26,6 +26,6 @@ class Diesel_JSXBlock extends Diesel_Block {
       $ourArgs['render_callback'] = [$this, 'diesel_block_render_callback'];
     }
 
-    register_block_type("dieselblocks/{$this->name}", $ourArgs);
+    register_block_type("diesel/{$this->name}", $ourArgs);
   }
 }

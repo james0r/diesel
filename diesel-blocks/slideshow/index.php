@@ -13,7 +13,7 @@
       modules: [window.SwiperPagination],
       loop: true,
       <?php 
-        if ($attributes['pagination']) {
+        if (isset($attributes['pagination'])) {
           echo "pagination: { el: '.swiper-pagination' }";
         }
       ?>

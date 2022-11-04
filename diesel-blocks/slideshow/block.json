@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/block.json",
   "apiVersion": 2,
-  "name": "dieselblocks/slideshow",
+  "name": "diesel/slideshow",
   "title": "Diesel Slideshow",
   "textdomain": "diesel",
   "icon": "universal-access-alt",
