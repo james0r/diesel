@@ -1,0 +1,11 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "diesel/non-jsx-basic",
+	"title": "Something",
+	"category": "",
+	"icon": "universal-access-alt",
+	"textdomain": "diesel",
+	"example": {},
+	"editorScript": "file:./index.js"
+}

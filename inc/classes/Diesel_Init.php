@@ -33,15 +33,15 @@ class Diesel_Init {
   }
 
   public function diesel_register_blocks() {
-    new Diesel_StaticBlock('eventsandblogs');
-    new Diesel_StaticBlock('footer');
-    new Diesel_StaticBlock('page');
-    new Diesel_StaticBlock('archive');
-    new Diesel_StaticBlock('searchresults');
-    new Diesel_StaticBlock('search');
+    new Diesel_NonJSXBlock('eventsandblogs');
+    new Diesel_NonJSXBlock('header', true);
+    new Diesel_NonJSXBlock('footer');
+    new Diesel_NonJSXBlock('page');
+    new Diesel_NonJSXBlock('archive');
+    new Diesel_NonJSXBlock('searchresults');
+    new Diesel_NonJSXBlock('search');
     
-    new Diesel_JSXBlock('accordion-esc', false);
-    new Diesel_JSXBlock('header', true);
+    new Diesel_JSXBlock('accordion-esc', true);
     new Diesel_JSXBlock('banner', true, ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_JSXBlock('genericheading');
     new Diesel_JSXBlock('genericbutton');

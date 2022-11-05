@@ -2,10 +2,10 @@
   "$schema": "https://json.schemastore.org/block.json",
   "apiVersion": 2,
   "name": "diesel/accordion-esc",
-  "title": "Diesel accordion-esc",
-  "textdomain": "diesel",
+  "title": "Diesel Accordion-esc",
   "icon": "universal-access-alt",
   "category": "",
+  "textdomain": "diesel",
   "example": {},
   "editorScript": "file:./index.js"
 }
