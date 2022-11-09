@@ -23,7 +23,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor'
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
-  const { text, alignment, isToggled } = attributes
+  const { text, alignment, isToggled, backgroundColor, textColor } = attributes
   const classes = [`text-box-align-${alignment}`]
 
   if (isToggled) {
@@ -34,10 +34,14 @@ export default function save({ attributes }) {
     <RichText.Content
       {...useBlockProps.save({
         className: classes.join(' '),
+        style: {
+          backgroundColor,
+          color: textColor,
+          textAlign: alignment
+        }
       })}
       tagName="h4"
       value={text}
-      style={{ textAlign: alignment }}
     />
   )
 }

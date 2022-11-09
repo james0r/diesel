@@ -24,6 +24,12 @@ registerBlockType('blocks-course/text-box', {
     angle: {
       type: 'int',
       default: 90
+    },
+    backgroundColor: {
+      type: 'string'
+    },
+    textColor: {
+      type: 'string'
     }
   },
   icon: {

@@ -25,7 +25,7 @@ class Diesel_Init {
   }
 
   public function diesel_add_theme_supports() {
-    add_theme_support('editor-styles');
+    // add_theme_support('editor-styles');
   }
 
   public function diesel_add_editor_styles() {
