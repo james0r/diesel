@@ -1,8 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "diesel/banner",
-	"title": "Diesel Banner",
+	"name": "diesel/inspector-controls-example",
+	"title": "Diesel Inpsector Controls Example",
 	"textdomain": "diesel",
 	"icon": "universal-access-alt",
 	"category": "",

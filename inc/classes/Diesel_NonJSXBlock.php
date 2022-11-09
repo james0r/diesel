@@ -1,21 +1,16 @@
 <?php
 /**
-*  Class for blocks with no editor configurations using a PHP render callback.
-*/
-
+ * Diesel_NonJSXBlock.
+ *
+ * @author	Unknown
+ * @since	v0.0.1
+ * @version	v1.0.0	Saturday, November 5th, 2022.
+ * @see		Diesel_Block
+ * @global
+ */
 class Diesel_NonJSXBlock extends Diesel_Block {
-  public function __construct($name) {
-    $this->name = $name;
-
-    add_action('init', [$this, 'onInit']);
-  }
-
-  public function onInit() {
-    wp_register_script($this->name, get_stylesheet_directory_uri() . "/diesel-blocks/{$this->name}/index.js", ['wp-blocks', 'wp-editor']);
-
-    register_block_type("diesel/{$this->name}", [
-      'editor_script'   => $this->name,
-      'render_callback' => [$this, 'diesel_block_render_callback']
-    ]);
+  function __construct($name, $renderCallback = null, $data = null) {
+    parent::__construct($name, $renderCallback, $data);
+    $this->script_path = "/diesel-blocks/{$this->name}/index.js";
   }
 }

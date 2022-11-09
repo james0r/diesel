@@ -32,14 +32,16 @@ class Diesel_Init {
     add_editor_style(['build/style-index.css', 'build/index.css']);
   }
 
+  
   public function diesel_register_blocks() {
-    new Diesel_NonJSXBlock('eventsandblogs');
+    new Diesel_NonJSXBlock('eventsandblogs', true);
     new Diesel_NonJSXBlock('header', true);
-    new Diesel_NonJSXBlock('footer');
-    new Diesel_NonJSXBlock('page');
-    new Diesel_NonJSXBlock('archive');
-    new Diesel_NonJSXBlock('searchresults');
-    new Diesel_NonJSXBlock('search');
+    new Diesel_NonJSXBlock('footer', true);
+    new Diesel_NonJSXBlock('page', true);
+    new Diesel_NonJSXBlock('archive', true);
+    new Diesel_NonJSXBlock('searchresults', true);
+    new Diesel_NonJSXBlock('search', true);
+    new Diesel_NonJSXBlock('non-jsx-basic');
     
     new Diesel_JSXBlock('accordion-esc', true);
     new Diesel_JSXBlock('banner', true, ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
@@ -49,5 +51,8 @@ class Diesel_Init {
     new Diesel_JSXBlock('slide', true);
     new Diesel_JSXBlock('sociallinks', true);
     new Diesel_JSXBlock('sociallink', true);
+    new Diesel_JSXBlock('inspector-controls-example', false);
+    new Diesel_JSXBlock('dynamic-block-example', false);
+    new Diesel_JSXBlock('course-text-box', false);
   }
 }
