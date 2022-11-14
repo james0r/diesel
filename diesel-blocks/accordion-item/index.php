@@ -9,8 +9,8 @@ $oneItemOpen = $attributes['parentAttributes']['oneItemOpen'] ?? null;
 $itemIsExpanded = $firstItemInitiallyOpen && ($index == 0) ? 'true' : 'false';
 ?>
 
-<div x-id="['diesel-accordion-item']" :id="$id('diesel-accordion-item')" class="diesel-block-accordion-item">
-  <?php if ($oneItemOpen) : ?>
+<?php if ($oneItemOpen) : ?>
+  <div x-id="['diesel-accordion-item']" :id="$id('diesel-accordion-item')" class="diesel-block-accordion-item">
     <h2 role="button" :aria-expanded="dieselBlockAccordionItemActive == <?php echo $index; ?>" :aria-controls="$id('diesel-accordion-item')" class="diesel-block-accordion-item__heading" @click="dieselBlockAccordionItemActive = <?php echo $index; ?>">
       <?php echo $headingText; ?>
     </h2>
@@ -18,7 +18,9 @@ $itemIsExpanded = $firstItemInitiallyOpen && ($index == 0) ? 'true' : 'false';
       <?php echo $panelText; ?>
       <?php echo $index; ?>
     </div>
+  </div>
   <?php else : ?>
+  <div x-id="['diesel-accordion-item']" x-data="{ expanded: <?php echo $itemIsExpanded; ?> }" :id="$id('diesel-accordion-item')" class="diesel-block-accordion-item">
     <h2 role="button" :aria-expanded="expanded" :aria-controls="$id('diesel-accordion-item')" class="diesel-block-accordion-item__heading" @click="expanded = !expanded">
       <?php echo $headingText; ?>
     </h2>
@@ -26,5 +28,5 @@ $itemIsExpanded = $firstItemInitiallyOpen && ($index == 0) ? 'true' : 'false';
       <?php echo $panelText; ?>
       <?php echo $index; ?>
     </div>
+  </div>
   <?php endif; ?>
-</div>
