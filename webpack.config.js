@@ -14,6 +14,7 @@ module.exports = {
     'diesel-blocks/searchresults': './diesel-blocks/searchresults',
     'diesel-blocks/search': './diesel-blocks/search',
     'diesel-blocks/accordion-esc': './diesel-blocks/accordion-esc',
+    'diesel-blocks/accordion-item': './diesel-blocks/accordion-item',
     'diesel-blocks/inspector-controls-example': './diesel-blocks/inspector-controls-example',
     'diesel-blocks/dynamic-block-example': './diesel-blocks/dynamic-block-example',
     'diesel-blocks/course-text-box': './diesel-blocks/course-text-box',

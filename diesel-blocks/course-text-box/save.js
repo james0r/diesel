@@ -23,8 +23,13 @@ import { useBlockProps, RichText } from '@wordpress/block-editor'
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
-  const { text, alignment, isToggled, backgroundColor, textColor } = attributes
+  const { text, alignment, isToggled, backgroundColor, textColor, padding } = attributes
   const classes = [`text-box-align-${alignment}`]
+
+  const alpine = {
+    'x-data': '{ isActive: false }',
+    'x-on:click': 'console.log("Clicked")'
+  }
 
   if (isToggled) {
     classes.push('is-toggled')
@@ -37,8 +42,13 @@ export default function save({ attributes }) {
         style: {
           backgroundColor,
           color: textColor,
-          textAlign: alignment
-        }
+          textAlign: alignment,
+          paddingLeft: padding.left,
+          paddingRight: padding.right,
+          paddingBottom: padding.bottom,
+          paddingTop: padding.top,
+        },
+        ...alpine
       })}
       tagName="h4"
       value={text}

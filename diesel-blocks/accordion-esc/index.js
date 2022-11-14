@@ -1,16 +1,12 @@
-import { InnerBlocks } from '@wordpress/block-editor';
-import { registerBlockType } from '@wordpress/blocks';
+import { registerBlockType } from '@wordpress/blocks'
+import edit from './edit'
+import save from './save'
 
 registerBlockType('diesel/accordion-esc', {
-	title: 'Diesel Accordion',
-	edit: EditComponent,
-	save: SaveComponent,
-});
+  title: 'Diesel Accordion',
+  edit,
+  save,
+  attributes: {
 
-function EditComponent(props) {
-	return <div>something backend</div>;
-}
-
-function SaveComponent(props) {
-	return <InnerBlocks.Content />;
-}
+  }
+})

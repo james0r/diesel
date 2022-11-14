@@ -19,18 +19,27 @@ registerBlockType('blocks-course/text-box', {
     },
     isToggled: {
       type: 'boolean',
-      default: true
+      default: true,
     },
     angle: {
       type: 'int',
-      default: 90
+      default: 90,
     },
     backgroundColor: {
-      type: 'string'
+      type: 'string',
     },
     textColor: {
-      type: 'string'
-    }
+      type: 'string',
+    },
+    padding: {
+      type: 'object',
+      default: {
+        top: '50px',
+        left: '10%',
+        right: '10%',
+        bottom: '50px',
+      },
+    },
   },
   icon: {
     src: (

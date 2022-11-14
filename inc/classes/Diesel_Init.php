@@ -43,7 +43,8 @@ class Diesel_Init {
     new Diesel_NonJSXBlock('search', true);
     new Diesel_NonJSXBlock('non-jsx-basic');
     
-    new Diesel_JSXBlock('accordion-esc', true);
+    new Diesel_JSXBlock('accordion-esc', false);
+    new Diesel_JSXBlock('accordion-item', true);
     new Diesel_JSXBlock('banner', true, ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_JSXBlock('genericheading');
     new Diesel_JSXBlock('genericbutton');
