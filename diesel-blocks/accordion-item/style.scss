@@ -1,0 +1,13 @@
+.diesel-block-accordion-item {
+
+  &__heading {
+    background-color: black;
+    color: white;
+  }
+
+  &__panel {
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+  }
+}

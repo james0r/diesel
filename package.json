@@ -11,6 +11,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@alpinejs/collapse": "^3.10.5",
 		"@wordpress/icons": "^9.1.0",
 		"@wordpress/scripts": "*",
 		"alpinejs": "^3.10.5",

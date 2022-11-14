@@ -1,8 +1,8 @@
 import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor'
 import { __ } from '@wordpress/i18n'
+import { useSelect } from '@wordpress/data'
 
 export default function Edit({ attributes, setAttributes, clientId }) {
-  const blockProps = useBlockProps()
   const { headingText, panelText, id } = attributes
 
   const onChangeHeadingText = (newValue) => {
@@ -13,13 +13,35 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     setAttributes({ panelText: newValue })
   }
 
-  setAttributes({ id: clientId })
+  setAttributes({ editorId: clientId })
+
+  const { index } = useSelect((select) => {
+    const { getBlockIndex } = select('core/block-editor')
+    return {
+      index: getBlockIndex(clientId),
+    }
+  })
+
+  setAttributes({ index })
+
+  const {parentAttributes} = useSelect((select) => {
+    const parentClientId = select( 'core/block-editor' ).getBlockHierarchyRootClientId( clientId )
+
+    return {
+      parentAttributes: select('core/block-editor').getBlockAttributes( parentClientId )
+    }
+  })
+
+
+  setAttributes({ parentAttributes })
 
   return (
     <>
-      <div {...useBlockProps({
-        'id': id
-      })}>
+      <div
+        {...useBlockProps({
+          id: id,
+        })}
+      >
         <RichText
           tagName="h2"
           placeholder={__('Item Heading', 'diesel')}

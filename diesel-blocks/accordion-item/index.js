@@ -13,8 +13,14 @@ registerBlockType('diesel/accordion-item', {
     panelText: {
       type: 'string'
     },
-    id: {
+    editorId: {
       type: 'string'
+    },
+    index: {
+      type: 'string'
+    },
+    parentAttributes: {
+      type: 'object'
     }
   }
 })

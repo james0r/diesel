@@ -7,6 +7,13 @@ registerBlockType('diesel/accordion-esc', {
   edit,
   save,
   attributes: {
-
+    firstItemInitiallyOpen: {
+      type: 'boolean',
+      default: false
+    },
+    oneItemOpen: {
+      type: 'boolean',
+      default: false
+    }
   }
 })
