@@ -1,6 +1,15 @@
 <?php
 
 class Diesel_Block {
+
+  public $name;
+
+  public $renderCallback;
+
+  public $data;
+
+  public $script_path;
+
   public function __construct($name, $renderCallback = null, $data = null) {
     $this->name           = $name;
     $this->renderCallback = $renderCallback;

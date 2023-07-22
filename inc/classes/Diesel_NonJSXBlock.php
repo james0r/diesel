@@ -11,6 +11,6 @@
 class Diesel_NonJSXBlock extends Diesel_Block {
   function __construct($name, $renderCallback = null, $data = null) {
     parent::__construct($name, $renderCallback, $data);
-    $this->script_path = "/diesel-blocks/{$this->name}/index.js";
+    $this->script_path = "/src/blocks/{$this->name}/index.js";
   }
 }

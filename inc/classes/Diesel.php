@@ -8,6 +8,8 @@ class Diesel {
   
   public static $instance = null;
 
+  public static $text_domain;
+
   public static $template_dir_path = '';
 
   public static $template_dir_url = '';
@@ -22,8 +24,15 @@ class Diesel {
 
   public static $version = DIESEL_VERSION;
 
+  public $init;
+
+  public $scripts;
+
+  public $styles;
+
   private function __construct() {
-    self::$theme_prefix = 'Diesel';
+    self::$theme_prefix = 'dsl_';
+    self::$text_domain = 'dsl';
     self::$template_dir_path = wp_normalize_path(get_template_directory());
     self::$template_dir_url = get_template_directory_uri();
     self::$stylesheet_dir_path = wp_normalize_path(get_stylesheet_directory());
