@@ -19,9 +19,9 @@ class Diesel_Block {
     add_action('init', [$this, 'onInit']);
   }
 
-  public function diesel_block_render_callback($attributes, $content) {
+  public function render_callback($attributes, $content) {
     ob_start();
-    require get_theme_file_path("/diesel-blocks/{$this->name}/index.php");
+    require get_theme_file_path("/src/diesel-blocks/{$this->name}/index.php");
     return ob_get_clean();
   }
 
@@ -37,7 +37,7 @@ class Diesel_Block {
     }
 
     if ($this->renderCallback) {
-      $ourArgs['render_callback'] = [$this, 'diesel_block_render_callback'];
+      $ourArgs['render_callback'] = [$this, 'render_callback'];
     }
 
     register_block_type("diesel/{$this->name}", $ourArgs);
