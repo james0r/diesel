@@ -1,22 +1,46 @@
+const path = require('path');
+const { globSync } = require('glob');
 const defaultConfig = require('@wordpress/scripts/config/webpack.config')
+
+// Adds a new loader in the scss rules to do bulk includes useing glob
+const customRules = defaultConfig.module.rules.map((item) => {
+  if (item.test && item.test.test('.scss')) {
+    item.use = [...item.use, { loader: 'import-glob-loader' }];
+  }
+  return item;
+});
 
 module.exports = {
   ...defaultConfig,
-  entry: {
-    index: './src/index',
-    'diesel-blocks/banner': './src/diesel-blocks/banner',
-    'diesel-blocks/slide': './src/diesel-blocks/slide',
-    'diesel-blocks/slideshow': './src/diesel-blocks/slideshow',
-    'diesel-blocks/sociallink': './src/diesel-blocks/sociallink',
-    'diesel-blocks/sociallinks': './src/diesel-blocks/sociallinks',
-    'diesel-blocks/genericheading': './src/diesel-blocks/genericheading',
-    'diesel-blocks/genericbutton': './src/diesel-blocks/genericbutton',
-    'diesel-blocks/searchresults': './src/diesel-blocks/searchresults',
-    'diesel-blocks/search': './src/diesel-blocks/search',
-    'diesel-blocks/accordion-esc': './src/diesel-blocks/accordion-esc',
-    'diesel-blocks/accordion-item': './src/diesel-blocks/accordion-item',
-    'diesel-blocks/inspector-controls-example': './src/diesel-blocks/inspector-controls-example',
-    'diesel-blocks/dynamic-block-example': './src/diesel-blocks/dynamic-block-example',
-    'diesel-blocks/course-text-box': './src/diesel-blocks/course-text-box',
+  entry: globSync('./src/blocks/*/frontend/index.js').reduce((acc, path) => {
+    const entry = path.replace('/index.js', '')
+      .replace('./src/', '').replace('src/', '').replace('js/', '')
+
+    console.log(entry, path)
+    const entryParsed = entry.split('/')[1] ? entry + '/' + entry.split('/')[1] : entry;
+    console.log(entryParsed, path)
+
+    if (entryParsed && !Array.isArray(entryParsed) && typeof acc[entryParsed] === 'undefined') {
+      acc[entryParsed] = './' + path
+      return acc;
+    }
+
+    acc[entry] = './' + path
+    return acc
   },
-}
+    {
+      admin: path.resolve(__dirname, './src/admin/index.js'),
+      'editor': path.resolve(__dirname, './src/blocks/index.js'),
+      public: path.resolve(__dirname, './src/public/index.js'),
+    }
+  ),
+  output: {
+    ...defaultConfig.output,
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: './',
+  },
+  module: {
+    ...defaultConfig.module,
+    rules: customRules,
+  },
+};

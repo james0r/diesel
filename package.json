@@ -13,10 +13,12 @@
 		"@alpinejs/collapse": "^3.10.5",
 		"@wordpress/icons": "^9.1.0",
 		"alpinejs": "^3.10.5",
+		"glob": "^10.3.3",
 		"normalize.css": "^8.0.1",
 		"swiper": "^8.2.3"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.9.0"
+		"@wordpress/scripts": "^26.9.0",
+		"import-glob-loader": "^1.1.0"
 	}
 }
