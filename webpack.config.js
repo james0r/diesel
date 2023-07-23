@@ -16,9 +16,7 @@ module.exports = {
     const entry = path.replace('/index.js', '')
       .replace('./src/', '').replace('src/', '').replace('js/', '')
 
-    console.log(entry, path)
     const entryParsed = entry.split('/')[1] ? entry + '/' + entry.split('/')[1] : entry;
-    console.log(entryParsed, path)
 
     if (entryParsed && !Array.isArray(entryParsed) && typeof acc[entryParsed] === 'undefined') {
       acc[entryParsed] = './' + path
