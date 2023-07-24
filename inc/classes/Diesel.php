@@ -22,7 +22,7 @@ class Diesel {
 
   public static $scripts_dir_url = '';
 
-  public static $version = DIESEL_VERSION;
+  public static $version = '';
 
   public $init;
 
@@ -31,12 +31,13 @@ class Diesel {
   public $styles;
 
   private function __construct() {
-    self::$theme_prefix = 'dsl_';
-    self::$text_domain = 'dsl';
+    self::$theme_prefix = 'diesel_';
+    self::$text_domain = 'diesel';
     self::$template_dir_path = wp_normalize_path(get_template_directory());
     self::$template_dir_url = get_template_directory_uri();
     self::$stylesheet_dir_path = wp_normalize_path(get_stylesheet_directory());
     self::$stylesheet_dir_url = get_stylesheet_directory_uri();
+    self::$version = DIESEL_VERSION;
   }
 
   // The Diesel Monolith is the Diesel instance that contains static member variables for all other class instances.
@@ -57,6 +58,18 @@ class Diesel {
 
   public function getPrefix() {
     return self::$theme_prefix;
+  }
+
+  public function getAssetPath($path = '', $base = '') {
+    if ($base === '') {
+      $base = self::$template_dir_path . '/dist';
+    }
+
+    if (strpos($path, '/') != 0) {
+      $path = '/' . $path;
+    }
+
+    return $base . $path;
   }
 
   public function requireOnce($path = '', $base = '') {

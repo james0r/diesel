@@ -21,7 +21,7 @@ class Diesel_Block {
 
   public function render_callback($attributes, $content) {
     ob_start();
-    require get_theme_file_path("/src/diesel-blocks/{$this->name}/index.php");
+    require get_theme_file_path("/src/blocks/{$this->name}/index.php");
     return ob_get_clean();
   }
 

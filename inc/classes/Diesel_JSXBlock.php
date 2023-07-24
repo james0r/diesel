@@ -6,6 +6,5 @@
 class Diesel_JSXBlock extends Diesel_Block {
   function __construct($name, $renderCallback = null, $data = null) {
     parent::__construct($name, $renderCallback, $data);
-    $this->script_path = "/build/diesel-blocks/{$this->name}.js";
   }
 }

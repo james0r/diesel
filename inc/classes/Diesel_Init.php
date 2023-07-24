@@ -27,7 +27,7 @@ class Diesel_Init {
   }
 
   public function add_editor_styles() {
-    add_editor_style(['build/style-index.css', 'build/index.css']);
+    add_editor_style(['dist/style-index.css', 'dist/index.css']);
   }
 
   
