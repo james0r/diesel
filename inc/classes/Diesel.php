@@ -28,8 +28,6 @@ class Diesel {
 
   public $scripts;
 
-  public $styles;
-
   private function __construct() {
     self::$theme_prefix = 'diesel_';
     self::$text_domain = 'diesel';
@@ -50,7 +48,6 @@ class Diesel {
 
       self::$instance->init = new Diesel_Init;
       self::$instance->scripts = new Diesel_Scripts;
-      self::$instance->styles = new Diesel_Styles;
     }
 
     return self::$instance;

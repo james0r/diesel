@@ -3,8 +3,14 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"start": "wp-scripts start --webpack-copy-php",
-		"build": "wp-scripts build --webpack-copy-php"
+    "preview": "npm-run-all --parallel sync wp-start tailwind-watch",
+    "sync": "browser-sync start -p 'diesel.mamp' --files '**/*.php' 'dist/*.js' 'dist/*.css'",
+		"wp-start": "wp-scripts start --webpack-copy-php",
+		"wp-build": "wp-scripts build --webpack-copy-php",
+    "tailwind-build": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
+    "tailwind-watch": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --watch --minify",
+    "start": "npm-run-all --parallel wp-start tailwind-watch",
+    "build": "npm-run-all --sequential wp-build tailwind-build"
 	},
 	"keywords": [],
 	"author": "",
@@ -18,7 +24,10 @@
 		"swiper": "^8.2.3"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.9",
 		"@wordpress/scripts": "^26.9.0",
-		"import-glob-loader": "^1.1.0"
+		"import-glob-loader": "^1.1.0",
+		"npm-run-all": "^4.1.5",
+		"tailwindcss": "^3.3.3"
 	}
 }
