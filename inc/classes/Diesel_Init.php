@@ -42,8 +42,7 @@ class Diesel_Init {
     
     new Diesel_Block_JSON('banner', ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_Block_JSON('slide', ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
-
-    new Diesel_Block_JSX('slideshow', true);
+    new Diesel_Block_JSON('slideshow');
 
     new Diesel_Block_JSX('accordion-esc', false);
     new Diesel_Block_JSX('accordion-item', true);

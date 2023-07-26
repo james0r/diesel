@@ -8,5 +8,6 @@
 	"category": "",
 	"example": {},
 	"editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
   "render": "file:./index.php"
 }

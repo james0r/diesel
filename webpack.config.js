@@ -10,22 +10,15 @@ const customRules = defaultConfig.module.rules.map((item) => {
   return item;
 });
 
-const frontendEntries = globSync('./src/blocks/*/frontend/index.js').reduce((acc, path) => {
+const blockEntries = globSync('./src/blocks/*/index.js').reduce((acc, path) => {
   const entry = path
-    .replace('/index.js', '')
-    .replace(/(^\.\/)?src\//g, '')
-    .replace('js/', '')
+    .replace('src/', '')
+    .replace('.js', '')
 
-  const entryParsed = entry.split('/')[1] ? `${entry}/${entry.split('/')[1]}` : entry;
-
-  if (entryParsed && !acc[entryParsed]) {
-    return { ...acc, [entryParsed]: `./${path}` }
-  }
-
-  return { ...acc };
+  return { ...acc, [entry]: `./${path}` };
 }, {});
 
-const blockEntries = globSync('./src/blocks/*/index.js').reduce((acc, path) => {
+const viewEntries = globSync('./src/blocks/*/view.js').reduce((acc, path) => {
   const entry = path
     .replace('src/', '')
     .replace('.js', '')
@@ -37,7 +30,7 @@ module.exports = {
   ...defaultConfig,
   entry: {
     ...blockEntries,
-    ...frontendEntries,
+    ...viewEntries,
     'admin': path.resolve(__dirname, './src/admin/index.js'),
     'public': path.resolve(__dirname, './src/public/index.js'),
   },
