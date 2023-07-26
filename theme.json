@@ -26,26 +26,26 @@
 		},
 		"color": {
 			"palette": [
-				{
-					"slug": "primary",
-					"color": "#0d3b66",
-					"name": "Primary"
-				},
-				{
-					"slug": "secondary",
-					"color": "#ee964b",
-					"name": "Secondary"
-				},
-				{
-					"slug": "background",
-					"color": "#FFFFFF",
-					"name": "Background"
-				},
-				{
-					"slug": "foreground",
-					"color": "#333333",
-					"name": "Foreground"
-				}
+        { 
+          "name": "Blue", 
+          "color": "#0d3b66",
+          "slug": "blue"
+        },
+        { 
+          "name": "orange", 
+          "color": "#ee964b",
+          "slug": "orange"
+        },
+        { 
+          "name": "Dark Orange", 
+          "color": "#f95738",
+          "slug": "dark-orange"
+        },
+        {
+          "name": "Hot Pink",
+          "color": "#ff028d",
+          "slug": "hot-pink"
+        }
 			]
 		},
 		"layout": {

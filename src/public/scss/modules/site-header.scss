@@ -83,7 +83,7 @@
     }
 
     @include atMedium {
-      display: none;
+      display: none !important;
     }
   }
 

@@ -1,6 +1,9 @@
-<div 
-  class="swiper slideshow" 
-  id="slideshow-<?php echo $attributes['blockId']; ?>">
+<div
+  x-data="dieselSlideshow()"
+  class="swiper slideshow"
+  data-block-id="<?php echo $attributes['blockId']; ?>"
+  data-is-paginated="<?php echo isset($attributes['pagination']) ? 'true' : 'false'; ?>"
+>
   <div class="swiper-wrapper">
     <?php echo $content; ?>
   </div>
@@ -8,15 +11,21 @@
 </div>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new Swiper('#slideshow-<?php echo $attributes['blockId']; ?>', {
-      modules: [window.SwiperPagination],
-      loop: true,
-      <?php 
-        if (isset($attributes['pagination'])) {
-          echo "pagination: { el: '.swiper-pagination' }";
-        }
-      ?>
-    })
-  });
+document.addEventListener('alpine:init', () => {
+  Alpine.data('dieselSlideshow', function() {
+    return {
+      swiperEl: document.querySelector(`[data-block-id="${this.$el.dataset.blockId}"]`),
+      isPaginated: this.$el.dataset.isPaginated,
+      init() {
+        new Swiper(this.swiperEl, {
+          modules: [window.SwiperPagination],
+          loop: true,
+          pagination: this.isPaginated === 'true' ? {
+            el: '.swiper-pagination'
+          } : false
+        })
+      }
+    }
+  })
+})
 </script>

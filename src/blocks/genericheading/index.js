@@ -12,6 +12,17 @@ registerBlockType('diesel/genericheading', {
 	save: SaveComponent,
 });
 
+function getClassName(size) {
+  switch (size) {
+    case 'small':
+      return 'tw-text-2xl tw-mb-4';
+    case 'medium':
+      return 'tw-text-4xl tw-mb-4';
+    case 'large':
+      return 'tw-text-6xl tw-mb-6';
+  }
+}
+
 function EditComponent(props) {
 	function handleTextChange(x) {
 		props.setAttributes({ text: x });
@@ -44,7 +55,7 @@ function EditComponent(props) {
 			<RichText
 				allowedFormats={['core/bold']}
 				tagName="h1"
-				className={`headline headline--${props.attributes.size}`}
+        className={`${getClassName(props.attributes.size)}`}
 				value={props.attributes.text}
 				onChange={handleTextChange}
 			/>
@@ -68,7 +79,7 @@ function SaveComponent(props) {
 		<RichText.Content
 			tagName={createTagName()}
 			value={props.attributes.text}
-			className={`headline headline--${props.attributes.size}`}
+			className={`${getClassName(props.attributes.size)}`}
 		/>
 	);
 }

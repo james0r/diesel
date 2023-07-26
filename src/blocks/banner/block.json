@@ -1,11 +1,13 @@
 {
-	"$schema": "https://json.schemastore.org/block.json",
-	"apiVersion": 2,
-	"name": "diesel/banner",
-	"title": "Diesel Banner",
-	"textdomain": "diesel",
-	"icon": "universal-access-alt",
-	"category": "",
-	"example": {},
-	"editorScript": "file:./index.js"
+  "$schema": "https://json.schemastore.org/block.json",
+  "apiVersion": 2,
+  "name": "diesel/banner",
+  "title": "Diesel Banner",
+  "textdomain": "diesel",
+  "icon": "universal-access-alt",
+  "category": "",
+  "example": {},
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css",
+  "render": "file:./index.php"
 }

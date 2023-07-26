@@ -3,29 +3,29 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-    "preview": "npm-run-all --parallel sync wp-start tailwind-watch",
-    "sync": "browser-sync start -p 'diesel.mamp' --files '**/*.php' 'dist/*.js' 'dist/*.css'",
+		"preview": "npm-run-all --parallel sync wp-start tailwind-watch",
+		"sync": "browser-sync start --config browsersync.config.js",
 		"wp-start": "wp-scripts start --webpack-copy-php",
 		"wp-build": "wp-scripts build --webpack-copy-php",
-    "tailwind-build": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
-    "tailwind-watch": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --watch --minify",
-    "start": "npm-run-all --parallel wp-start tailwind-watch",
-    "build": "npm-run-all --sequential wp-build tailwind-build"
+		"tailwind-build": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
+		"tailwind-watch": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --watch --minify",
+		"start": "npm-run-all --parallel wp-start tailwind-watch",
+		"build": "npm-run-all --sequential wp-build tailwind-build"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@alpinejs/collapse": "^3.10.5",
 		"@wordpress/icons": "^9.1.0",
-		"alpinejs": "^3.10.5",
-		"glob": "^10.3.3",
 		"normalize.css": "^8.0.1",
 		"swiper": "^8.2.3"
 	},
 	"devDependencies": {
+		"@alpinejs/collapse": "^3.12.3",
 		"@tailwindcss/typography": "^0.5.9",
 		"@wordpress/scripts": "^26.9.0",
+		"alpinejs": "^3.12.3",
+		"glob": "^10.3.3",
 		"import-glob-loader": "^1.1.0",
 		"npm-run-all": "^4.1.5",
 		"tailwindcss": "^3.3.3"

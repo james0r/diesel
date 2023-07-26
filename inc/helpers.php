@@ -1,39 +1,27 @@
-<?php 
+<?php
 
-if (!function_exists('pageBanner')) {
-
-  function pageBanner($args = NULL) {
-      if (!$args['title']) {
-        $args['title'] = get_the_title();
-      }
-
-      if (!$args['subtitle']) {
-        $args['subtitle'] = get_field('page_banner_subtitle');
-      }
-
-      if (!$args['photo']) {
-        if (get_field('page_banner_background_image') AND !is_archive() AND !is_home() ) {
-          $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner'];
-        } else {
-          $args['photo'] = get_theme_file_uri('/images/ocean.jpg');
-        }
-      }
-
-      ?>
-    <div class="page-banner">
-      <div class="page-banner__bg-image"
-        style="background-image: url(<?php echo $args['photo']; ?>);">
-      </div>
-      <div class="page-banner__content t-center container container--narrow">
-        <h1 class="page-banner__title"><?php echo $args['title'] ?>
-        </h1>
-        <div class="page-banner__intro">
-          <p><?php echo $args['subtitle']; ?>
-          </p>
-        </div>
-      </div>
-    </div>
-    <?php
+if (!function_exists('dd')) {
+  function dd($data) {
+    ini_set('highlight.comment', '#969896; font-style: italic');
+    ini_set('highlight.default', '#FFFFFF');
+    ini_set('highlight.html', '#D16568');
+    ini_set('highlight.keyword', '#7FA3BC; font-weight: bold');
+    ini_set('highlight.string', '#F2C47E');
+    $output = highlight_string("<?php\n\n" . var_export($data, true), true);
+    echo "<div style=\"background-color: #1C1E21; padding: 1rem\">{$output}</div>";
+    die();
   }
 }
-  
+
+if (!function_exists('diesel_dashes_to_camel_case')) {
+  function diesel_dashes_to_camel_case($string, $capitalizeFirstCharacter = false) {
+
+    $str = str_replace('-', '', ucwords($string, '-'));
+
+    if (!$capitalizeFirstCharacter) {
+      $str = lcfirst($str);
+    }
+
+    return $str;
+  }
+}

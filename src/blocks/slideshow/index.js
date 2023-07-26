@@ -1,4 +1,4 @@
-import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import {
 	Button,
@@ -37,8 +37,10 @@ function EditComponent(props) {
 		}
 	}, []);
 
+  const blockProps = useBlockProps()
+
 	return (
-		<>
+		<div {...blockProps}>
 			<InspectorControls>
 				<PanelBody title="Settings" initialOpen={true}>
 					<PanelRow>
@@ -62,7 +64,7 @@ function EditComponent(props) {
 				</p>
 				<InnerBlocks allowedBlocks={['diesel/slide']} />
 			</div>
-		</>
+		</div>
 	);
 }
 

@@ -5,6 +5,7 @@ import {
 	InspectorControls,
 	MediaUpload,
 	MediaUploadCheck,
+  useBlockProps
 } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
@@ -17,7 +18,7 @@ registerBlockType('diesel/slide', {
 	attributes: {
 		align: { type: 'string', default: 'full' },
 		imgID: { type: 'number' },
-		imgURL: { type: 'string', default: window.banner.fallbackImage },
+		imgURL: { type: 'string', default: window.dieselSlide.fallbackImage },
 	},
 	edit: EditComponent,
 	save: SaveComponent,
@@ -47,8 +48,10 @@ function EditComponent(props) {
 		props.setAttributes({ imgID: x.id });
 	}
 
+  const blockProps = useBlockProps()
+
 	return (
-		<>
+		<div {...blockProps}>
 			<InspectorControls>
 				<PanelBody title="Background" initialOpen={true}>
 					<PanelRow>
@@ -58,7 +61,7 @@ function EditComponent(props) {
 								value={props.attributes.imgID}
 								render={({ open }) => {
 									return (
-										<Button onClick={open}>
+										<Button onClick={open} className="is-primary">
 											Choose Image
 										</Button>
 									);
@@ -68,14 +71,14 @@ function EditComponent(props) {
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<div className="page-banner">
+			<div className="tw-h-[300px] tw-relative">
 				<div
-					className="page-banner__bg-image"
+					className="tw-absolute tw-w-full tw-h-full tw-bg-cover tw-bg-center"
 					style={{
 						backgroundImage: `url('${props.attributes.imgURL}')`,
 					}}
 				></div>
-				<div className="page-banner__content container t-center c-white">
+				<div className="tw-absolute tw-h-full tw-w-full tw-flex tw-items-center tw-justify-center tw-text-white tw-text-center">
 					<InnerBlocks
 						allowedBlocks={[
 							'diesel/genericheading',
@@ -84,7 +87,7 @@ function EditComponent(props) {
 					/>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
