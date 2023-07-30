@@ -10,7 +10,7 @@ const themePalette = theme.settings.color.palette
 const rem = px => `${px / 16}rem`
 
 module.exports = {
-  content: ['./**/*.php', './src/**/*.js'].concat(glob.sync('./*.php')),
+  content: require('fast-glob').sync(['./**/*.php', './src/**/*.js']),
   important: '.has-tailwind',
   corePlugins: {
     preflight: false,

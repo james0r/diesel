@@ -6,9 +6,9 @@ if (!isset($attributes['imgURL'])) {
 ?>
 
 <section class="has-tailwind" data-block-id="<?php echo $attributes['instanceId'] ?>">
-  <div class="w-full bg-black pt-[80px] md:pt-[130px] px-0 pb-[40px] md:pb-[60px] page-banner">
+  <div class="relative w-full bg-black pt-[80px] md:pt-[130px] px-0 pb-[40px] md:pb-[60px]">
     <div
-      class="page-banner__bg-image"
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
       style="background-image: url('<?php echo $attributes['imgURL']; ?>')"
     >
     </div>

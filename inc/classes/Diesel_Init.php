@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This class handles general theme setup actions.
  */
@@ -28,8 +29,10 @@ class Diesel_Init {
     add_theme_support('editor-styles');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_theme_support('wp-block-styles');
+    add_theme_support('align-wide');
   }
-  
+
   public function register_blocks() {
     new Diesel_Block_Placeholder('eventsandblogs');
     new Diesel_Block_Placeholder('header');
@@ -39,7 +42,7 @@ class Diesel_Init {
     new Diesel_Block_Placeholder('searchresults');
     new Diesel_Block_Placeholder('search');
     new Diesel_Block_Placeholder('non-jsx-basic');
-    
+
     new Diesel_Block_JSON('banner', ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_Block_JSON('slide', ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_Block_JSON('slideshow');

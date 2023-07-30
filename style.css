@@ -5,29 +5,3 @@ Author URI: https://www.jamesauble.com
 Description: A starter theme for WordPress using the Gutenberg editor.
 Version: 2023
 **/
-
-/* Gutenberg block alignment */
-.alignfull {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-.alignfull img {
-  width: 100%;
-}
-
-.wp-block-post-content {
-  max-width: 840px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.alignwide {
-  max-width: 1110px;
-  margin-left: -135px;
-  margin-right: -135px;
-}
