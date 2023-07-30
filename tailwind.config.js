@@ -3,14 +3,14 @@ let plugin = require('tailwindcss/plugin')
 const fs = require('fs')
 const themeJson = fs.readFileSync('./theme.json')
 const theme = JSON.parse(themeJson)
-const glob = require('glob')
+const glob = require('fast-glob')
 
 const themePalette = theme.settings.color.palette
 
 const rem = px => `${px / 16}rem`
 
 module.exports = {
-  content: require('fast-glob').sync(['./**/*.php', './src/**/*.js']),
+  content: glob.sync(['./**/*.php', './src/**/*.js']),
   important: '.has-tailwind',
   corePlugins: {
     preflight: false,
