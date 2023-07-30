@@ -1,0 +1,8 @@
+@layer overrides {
+  .wp-block-coblocks-accordion-item {
+    p:not(.has-background).is-style-info {
+      background-color: blue;
+      color: white;
+    }
+  }
+}

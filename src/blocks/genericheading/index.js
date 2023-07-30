@@ -15,11 +15,11 @@ registerBlockType('diesel/genericheading', {
 function getClassName(size) {
   switch (size) {
     case 'small':
-      return 'tw-text-2xl tw-mb-4';
+      return 'text-2xl mb-4';
     case 'medium':
-      return 'tw-text-4xl tw-mb-4';
+      return 'text-4xl mb-4';
     case 'large':
-      return 'tw-text-6xl tw-mb-6';
+      return 'text-6xl mb-6';
   }
 }
 

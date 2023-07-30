@@ -1,4 +1,5 @@
 import apiFetch from '@wordpress/api-fetch';
+import { useInstanceId } from '@wordpress/compose';
 import { Button, PanelBody, PanelRow } from '@wordpress/components';
 import {
   InnerBlocks,
@@ -18,6 +19,7 @@ registerBlockType('diesel/banner', {
   attributes: {
     align: { type: 'string', default: 'full' },
     imgID: { type: 'number' },
+    instanceId: { type: 'string' },
     imgURL: { type: 'string', default: window.dieselBanner.fallbackImage },
   },
   edit: EditComponent,
@@ -50,8 +52,18 @@ function EditComponent(props) {
 
   const blockProps = useBlockProps()
 
+	const instanceId = useInstanceId( EditComponent );
+
+  console.log(instanceId)
+
+  useEffect(function () {
+		if (!props.attributes.instanceId) {
+			props.setAttributes({ instanceId: instanceId });
+		}
+	}, []);
+
   return (
-    <div {...blockProps}>
+    <div {...blockProps} className="has-tailwind">
       <InspectorControls>
         <PanelBody title="Background" initialOpen={true}>
           <PanelRow>
@@ -71,14 +83,14 @@ function EditComponent(props) {
           </PanelRow>
         </PanelBody>
       </InspectorControls>
-      <div className="tw-relative tw-w-full tw-bg-black tw-pt-[80px] md:tw-pt-[130px] tw-px-0 tw-pb-[40px] md:tw-pb-[60px] page-banner">
+      <div className="relative w-full bg-black pt-[80px] md:pt-[130px] px-0 pb-[40px] md:pb-[60px] page-banner">
         <div
           className="page-banner__bg-image"
           style={{
             backgroundImage: `url('${props.attributes.imgURL}')`,
           }}
         ></div>
-        <div className="tw-container tw-text-center tw-text-white">
+        <div className="container text-center text-white">
           <InnerBlocks
             allowedBlocks={[
               'diesel/genericheading',

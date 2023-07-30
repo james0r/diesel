@@ -7,7 +7,7 @@
 class Diesel_Scripts {
   public function __construct() {
     add_action('wp_enqueue_scripts', [$this, 'enqueue_public_assets']);
-    add_action('init', [$this, 'register_editor_styles']);
+    add_action('admin_init', [$this, 'register_editor_styles']);
     add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_assets']);
   }
 

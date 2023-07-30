@@ -102,7 +102,7 @@ function EditComponent(props) {
       <RichText
         allowedFormats={[]}
         tagName="a"
-        className={`btn btn--${props.attributes.size} tw-transition tw-bg-${props.attributes.colorName} hover:tw-bg-${props.attributes.colorName}/75`}
+        className={`btn btn--${props.attributes.size} transition bg-${props.attributes.colorName} hover:bg-${props.attributes.colorName}/75`}
         value={props.attributes.text}
         onChange={handleTextChange}
         { ...props.attributes.linkObject?.opensInNewTab && { 'target': '_blank' } }
@@ -140,7 +140,7 @@ function SaveComponent(props) {
   return (
     <a
       href={props.attributes.linkObject.url}
-      className={`btn btn--${props.attributes.size} tw-transition tw-bg-${props.attributes.colorName} hover:tw-bg-${props.attributes.colorName}/75`}
+      className={`btn btn--${props.attributes.size} transition bg-${props.attributes.colorName} hover:bg-${props.attributes.colorName}/75`}
       { ...props.attributes.linkObject?.opensInNewTab && { 'target': '_blank' } }
     >
       {props.attributes.text}

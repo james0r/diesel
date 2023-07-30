@@ -1,18 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 let plugin = require('tailwindcss/plugin')
-import theme from './theme.json'
+const fs = require('fs')
+const themeJson = fs.readFileSync('./theme.json')
+const theme = JSON.parse(themeJson)
+const glob = require('glob')
+
 const themePalette = theme.settings.color.palette
 
+const rem = px => `${px / 16}rem`
+
 module.exports = {
-  content: require('fast-glob').sync(['./**/*.php', './src/**/*.js']),
-  prefix: 'tw-',
+  content: ['./**/*.php', './src/**/*.js'].concat(glob.sync('./*.php')),
+  important: '.has-tailwind',
+  corePlugins: {
+    preflight: false,
+  },
   safelist: themePalette.reduce((acc, color) => {
-    return[
+    return [
       ...acc,
-      `tw-bg-${color.slug}`,
-      `hover:tw-bg-${color.slug}/75`,
+      `bg-${color.slug}`,
+      `hover:bg-${color.slug}/75`,
     ]
-  }, []),
+  }, []).concat([
+    'tailwind',
+  ]),
   theme: {
     container: {
       center: true,

@@ -5,15 +5,17 @@ if (!isset($attributes['imgURL'])) {
 }
 ?>
 
-<div class="tw-w-full tw-bg-black tw-pt-[80px] md:tw-pt-[130px] tw-px-0 tw-pb-[40px] md:tw-pb-[60px] page-banner">
-  <div
-    class="page-banner__bg-image"
-    style="background-image: url('<?php echo $attributes['imgURL']; ?>')"
-  >
+<section class="has-tailwind" data-block-id="<?php echo $attributes['instanceId'] ?>">
+  <div class="w-full bg-black pt-[80px] md:pt-[130px] px-0 pb-[40px] md:pb-[60px] page-banner">
+    <div
+      class="page-banner__bg-image"
+      style="background-image: url('<?php echo $attributes['imgURL']; ?>')"
+    >
+    </div>
+    <div
+      class="relative z-[2] container text-center text-white flex flex-col items-center [&_a]:mt-4"
+    >
+      <?php echo $content; ?>
+    </div>
   </div>
-  <div
-    class="tw-relative tw-z-[2] tw-container tw-text-center tw-text-white tw-flex tw-flex-col tw-items-center [&_a]:tw-mt-4"
-  >
-    <?php echo $content; ?>
-  </div>
-</div>
+</section>
