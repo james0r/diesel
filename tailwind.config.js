@@ -1,16 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 let plugin = require('tailwindcss/plugin')
 const fs = require('fs')
-const themeJson = fs.readFileSync('./theme.json')
-const theme = JSON.parse(themeJson)
-const glob = require('fast-glob')
+const theme = JSON.parse(fs.readFileSync('./theme.json'))
 
 const themePalette = theme.settings.color.palette
+const themeFontFamilies = theme.settings.typography.fontFamilies
 
 const rem = px => `${px / 16}rem`
 
 module.exports = {
-  content: glob.sync(['./**/*.php', './src/**/*.js']),
+  content: require('fast-glob').glob.sync(['./**/*.php', './src/**/*.js']),
   important: '.has-tailwind',
   corePlugins: {
     preflight: false,
@@ -51,9 +50,14 @@ module.exports = {
       // => @media (min-width: 1480px) { ... }
     },
     extend: {
-      fontFamily: {
+      fontFamily: themeFontFamilies.reduce((acc, fontFamily) => {
+        return {
+          ...acc,
+          [fontFamily.slug]: fontFamily.fontFamily.split(', ')
+        }
+      }, {
         'open-sans': ['"Open Sans"', 'sans-serif'],
-      },
+      }),
       typography: {
         DEFAULT: {
           css: {

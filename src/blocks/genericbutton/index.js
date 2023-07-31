@@ -15,6 +15,7 @@ import {
   InspectorControls,
   __experimentalLinkControl as LinkControl,
   getColorObjectByColorValue,
+  useBlockProps
 } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { useState } from '@wordpress/element';
@@ -25,10 +26,10 @@ registerBlockType('diesel/genericbutton', {
   title: 'Diesel Button',
   category: 'Diesel',
   attributes: {
-    text: { type: 'string' },
+    text: { type: 'string', default: 'Button Text' },
     size: { type: 'string', default: 'large' },
     linkObject: { type: 'object', default: { url: '', opensInNewTab: false } },
-    colorName: { type: 'string', default: 'blue' }
+    colorName: { type: 'string', default: 'oxford-blue' }
   },
   edit: EditComponent,
   save: SaveComponent,
@@ -59,8 +60,21 @@ function EditComponent(props) {
     props.setAttributes({ colorName: name });
   }
 
+  function getBlockSizeClasses() {
+    const size = props.attributes.size;
+    if (size === 'large') {
+      return 'py-2 px-6 text-lg';
+    } else if (size === 'medium') {
+      return 'py-2 px-4 text-base';
+    } else if (size === 'small') {
+      return 'py-1 px-3 text-sm';
+    }
+  }
+
+  const blockProps = useBlockProps()
+
   return (
-    <>
+    <div { ...blockProps }>
       <BlockControls>
         <ToolbarGroup>
           <ToolbarButton onClick={buttonHandler} icon={link} />
@@ -102,7 +116,7 @@ function EditComponent(props) {
       <RichText
         allowedFormats={[]}
         tagName="a"
-        className={`btn btn--${props.attributes.size} transition bg-${props.attributes.colorName} hover:bg-${props.attributes.colorName}/75`}
+        className={`rounded-lg py-2 px-6 text-white no-underline transition bg-${props.attributes.colorName} hover:bg-${props.attributes.colorName}/75 ${getBlockSizeClasses()}`}
         value={props.attributes.text}
         onChange={handleTextChange}
         { ...props.attributes.linkObject?.opensInNewTab && { 'target': '_blank' } }
@@ -132,15 +146,26 @@ function EditComponent(props) {
           </Button>
         </Popover>
       )}
-    </>
+    </div>
   );
 }
 
 function SaveComponent(props) {
+  function getBlockSizeClasses() {
+    const size = props.attributes.size;
+    if (size === 'large') {
+      return 'py-2 px-6 text-lg';
+    } else if (size === 'medium') {
+      return 'py-2 px-4 text-base';
+    } else if (size === 'small') {
+      return 'py-1 px-3 text-sm';
+    }
+  }
+
   return (
     <a
       href={props.attributes.linkObject.url}
-      className={`btn btn--${props.attributes.size} transition bg-${props.attributes.colorName} hover:bg-${props.attributes.colorName}/75`}
+      className={`rounded-lg text-white no-underline transition bg-${props.attributes.colorName} hover:bg-${props.attributes.colorName}/75 ${getBlockSizeClasses()}`}
       { ...props.attributes.linkObject?.opensInNewTab && { 'target': '_blank' } }
     >
       {props.attributes.text}

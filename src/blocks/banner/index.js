@@ -63,7 +63,7 @@ function EditComponent(props) {
 	}, []);
 
   return (
-    <div {...blockProps} className="has-tailwind">
+    <div {...blockProps} className="has-tailwind diesel-block-banner">
       <InspectorControls>
         <PanelBody title="Background" initialOpen={true}>
           <PanelRow>

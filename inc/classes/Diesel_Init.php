@@ -35,17 +35,17 @@ class Diesel_Init {
 
   public function register_blocks() {
     new Diesel_Block_Placeholder('eventsandblogs');
-    new Diesel_Block_Placeholder('header');
     new Diesel_Block_Placeholder('footer');
     new Diesel_Block_Placeholder('page');
     new Diesel_Block_Placeholder('archive');
     new Diesel_Block_Placeholder('searchresults');
     new Diesel_Block_Placeholder('search');
     new Diesel_Block_Placeholder('non-jsx-basic');
-
+    
     new Diesel_Block_JSON('banner', ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_Block_JSON('slide', ['fallbackImage' => get_theme_file_uri('/images/library-hero.jpg')]);
     new Diesel_Block_JSON('slideshow');
+    new Diesel_Block_JSON('header');
 
     new Diesel_Block_JSX('accordion-esc', false);
     new Diesel_Block_JSX('accordion-item', true);

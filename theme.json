@@ -1,56 +1,233 @@
 {
-	"version": 2,
-	"styles": {
-		"blocks": {
-			"core/button": {
-				"color": {
-					"text": "#FFFFFF",
-					"background": "var(--wp--preset--color--primary)"
-				}
-			}
-		}
-	},
-	"settings": {
-		"typography": {
-			"fontSizes": []
-		},
-		"blocks": {
-			"core/button": {
-				"border": {
-					"color": false,
-					"radius": false,
-					"style": false,
-					"width": false
-				}
-			}
-		},
-		"color": {
-			"palette": [
-        { 
-          "name": "Blue", 
-          "color": "#0d3b66",
-          "slug": "blue"
-        },
-        { 
-          "name": "orange", 
-          "color": "#ee964b",
-          "slug": "orange"
-        },
-        { 
-          "name": "Dark Orange", 
-          "color": "#f95738",
-          "slug": "dark-orange"
+  "version": 2,
+  "styles": {
+    "blocks": {
+      "core/button": {
+        "color": {
+          "text": "#FFFFFF",
+          "background": "var(--wp--preset--color--primary)"
+        }
+      }
+    }
+  },
+  "settings": {
+    "typography": {
+      "fontSizes": [],
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Overpass\", sans-serif",
+          "name": "Overpass",
+          "slug": "overpass",
+          "fontFace": [
+            {
+              "fontFamily": "Overpass",
+              "fontWeight": "200",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/overpass.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Overpass",
+              "fontWeight": "300",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/overpass.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Overpass",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/overpass.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Overpass",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/overpass.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Overpass",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/overpass.woff2"
+              ]
+            }
+          ]
         },
         {
-          "name": "Hot Pink",
-          "color": "#ff028d",
-          "slug": "hot-pink"
+          "fontFamily": "\"Playfair Display\", serif",
+          "name": "Playfair Display",
+          "slug": "playfair-display",
+          "fontFace": [
+            {
+              "fontFamily": "Playfair Display",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/playfair-display.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Playfair Display",
+              "fontWeight": "500",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/playfair-display.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Playfair Display",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/playfair-display.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Playfair Display",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/playfair-display.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"Fira Sans Condensed\", sans-serif",
+          "name": "Fira Sans Condensed",
+          "slug": "fira-sans-condensed",
+          "fontFace": [
+            {
+              "fontFamily": "Fira Sans Condensed",
+              "fontWeight": "100",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/fira-sans-condensed.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Fira Sans Condensed",
+              "fontWeight": "200",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/fira-sans-condensed.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Fira Sans Condensed",
+              "fontWeight": "300",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/fira-sans-condensed.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Fira Sans Condensed",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/fira-sans-condensed.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Fira Sans Condensed",
+              "fontWeight": "500",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/fira-sans-condensed.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Fira Sans Condensed",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/fira-sans-condensed.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Fira Sans Condensed",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": [
+                "file:./static/fira-sans-condensed.woff2"
+              ]
+            }
+          ]
         }
-			]
-		},
-		"layout": {
-			"contentSize": "840px",
-			"wideSize": "initial"
-		}
-	}
+      ]
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "color": false,
+          "radius": false,
+          "style": false,
+          "width": false
+        }
+      }
+    },
+    "color": {
+      "palette": [
+        {
+          "name": "White",
+          "color": "#ffffff",
+          "slug": "white"
+        },
+        {
+          "name": "Brown",
+          "color": "#78350f",
+          "slug": "orange"
+        },
+        {
+          "name": "Ebony",
+          "color": "#111827",
+          "slug": "ebony"
+        },
+        {
+          "name": "River Bed",
+          "color": "#4b5563",
+          "slug": "river-bed"
+        },
+        {
+          "name": "Oxford Blue",
+          "color": "#374151",
+          "slug": "oxford-blue"
+        },
+        {
+          "name": "Black",
+          "color": "#000000",
+          "slug": "black"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "840px",
+      "wideSize": "initial"
+    }
+  }
 }
