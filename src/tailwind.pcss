@@ -1,6 +1,9 @@
 @tailwind base;
 
 @layer base {
+  body {
+    @apply font-overpass;
+  }
 
   .has-tailwind {
     /* Scoped Preflight */
@@ -19,7 +22,7 @@
     pre {
       margin: 0;
     }
-  
+
     h1,
     h2,
     h3,
@@ -29,14 +32,14 @@
       font-size: inherit;
       font-weight: inherit;
     }
-  
+
     ol,
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
     }
-  
+
     img,
     svg,
     video,
@@ -48,13 +51,13 @@
       display: block;
       vertical-align: middle;
     }
-  
+
     img,
     video {
       max-width: 100%;
       height: auto;
     }
-  
+
     *,
     ::before,
     ::after {
@@ -66,10 +69,52 @@
 }
 
 @tailwind components;
+
 @tailwind utilities;
 
 /* Wordpress Block Style Overrides */
 
 .is-layout-constrained .alignwide {
   @apply !container;
+}
+
+header {
+  .wp-block-navigation__responsive-container {
+    @apply !bg-beige;
+  }
+
+  .wp-block-navigation__responsive-container-close {
+    @apply !left-0;
+
+    svg {
+      @apply fill-transparent text-brown !h-[30px] !w-[30px] !stroke-2;
+    }
+  }
+
+  .wp-block-navigation__responsive-container-content {
+    @apply !flex !items-center !justify-center;
+  }
+
+  .wp-block-navigation__responsive-dialog,
+  .wp-block-navigation__responsive-container-content,
+  .wp-block-navigation__responsive-close {
+    @apply !h-full;
+  }
+
+  .wp-block-navigation__container {
+    @apply !h-max !grow-0 !text-2xl !text-brown !font-bold;
+
+    li:after {
+      content: '';
+      @apply transition opacity-0 absolute w-full h-[3px] -bottom-[5px] left-0 bg-brown skew-x-12;
+    }
+
+    li {
+      @apply !mt-6;
+
+      &:hover:after {
+        @apply !opacity-100 transition;
+      }
+    }
+  }
 }

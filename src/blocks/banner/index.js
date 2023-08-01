@@ -54,8 +54,6 @@ function EditComponent(props) {
 
 	const instanceId = useInstanceId( EditComponent );
 
-  console.log(instanceId)
-
   useEffect(function () {
 		if (!props.attributes.instanceId) {
 			props.setAttributes({ instanceId: instanceId });

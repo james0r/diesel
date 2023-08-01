@@ -8,12 +8,18 @@ class Diesel_Init {
   public function __construct() {
     add_action('after_setup_theme', array($this, 'register_theme_support'));
     add_action('after_setup_theme', array($this, 'register_image_sizes'));
+    add_action('body_class', array($this, 'add_body_classes'));;
 
     $this->disable_wp_noise();
     $this->register_blocks();
 
     global $sections_included;
     $sections_included = array();
+  }
+
+  public function add_body_classes($classes) {
+
+    return $classes;
   }
 
   public function disable_wp_noise() {

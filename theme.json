@@ -12,7 +12,73 @@
   },
   "settings": {
     "typography": {
-      "fontSizes": [],
+      "fontSizes": [
+        {
+					"slug": "xs",
+					"size": ".75rem",
+					"name": "Extra Small"
+				},
+        {
+					"slug": "sm",
+					"size": ".875rem",
+					"name": "Small"
+				},
+        {
+					"slug": "base",
+					"size": "1rem",
+					"name": "Base"
+				},
+        {
+					"slug": "lg",
+					"size": "1.125rem",
+					"name": "Large"
+				},
+        {
+					"slug": "xl",
+					"size": "1.25rem",
+					"name": "Extra Large"
+				},
+        {
+					"slug": "2xl",
+					"size": "1.5rem",
+					"name": "2XL"
+				},
+        {
+					"slug": "3xl",
+					"size": "1.875rem",
+					"name": "3XL"
+				},
+        {
+					"slug": "4xl",
+					"size": "2.25rem",
+					"name": "4XL"
+				},
+        {
+					"slug": "5xl",
+					"size": "3rem",
+					"name": "5XL"
+				},
+        {
+					"slug": "6xl",
+					"size": "3.75rem",
+					"name": "6XL"
+				},
+        {
+					"slug": "7xl",
+					"size": "4.5rem",
+					"name": "7XL"
+				},
+        {
+					"slug": "8xl",
+					"size": "6rem",
+					"name": "8XL"
+				},
+        {
+					"slug": "9xl",
+					"size": "8rem",
+					"name": "9XL"
+				}
+      ],
       "fontFamilies": [
         {
           "fontFamily": "\"Overpass\", sans-serif",
@@ -201,7 +267,7 @@
         {
           "name": "Brown",
           "color": "#78350f",
-          "slug": "orange"
+          "slug": "brown"
         },
         {
           "name": "Ebony",
@@ -222,6 +288,11 @@
           "name": "Black",
           "color": "#000000",
           "slug": "black"
+        },
+        {
+          "name": "Beige",
+          "color": "#E4D7CF",
+          "slug": "beige"
         }
       ]
     },

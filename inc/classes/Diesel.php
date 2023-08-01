@@ -28,6 +28,8 @@ class Diesel {
 
   public $scripts;
 
+  public $core_block_overrides;
+
   private function __construct() {
     self::$theme_prefix = 'diesel_';
     self::$text_domain = 'diesel';
@@ -48,6 +50,7 @@ class Diesel {
 
       self::$instance->init = new Diesel_Init;
       self::$instance->scripts = new Diesel_Scripts;
+      self::$instance->core_block_overrides = new Diesel_Core_Block_Overrides;
     }
 
     return self::$instance;

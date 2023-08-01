@@ -5,6 +5,7 @@ const theme = JSON.parse(fs.readFileSync('./theme.json'))
 
 const themePalette = theme.settings.color.palette
 const themeFontFamilies = theme.settings.typography.fontFamilies
+const themeFontSizes = theme.settings.typography.fontSizes
 
 const rem = px => `${px / 16}rem`
 
@@ -22,6 +23,20 @@ module.exports = {
     ]
   }, []).concat([
     'tailwind',
+    'text-xm',
+    'text-sm',
+    'text-base',
+    'text-lg',
+    'text-xl',
+    'text-2xl',
+    'text-3xl',
+    'text-4xl',
+    'text-5xl',
+    'text-6xl',
+    'text-7xl',
+    'text-8xl',
+    'text-9xl',
+    'font-overpass'
   ]),
   theme: {
     container: {
@@ -49,6 +64,12 @@ module.exports = {
       '2xl': '1480px',
       // => @media (min-width: 1480px) { ... }
     },
+    fontSize: themeFontSizes.reduce((acc, fontSize) => {
+      return {
+        ...acc,
+        [fontSize.slug]: fontSize.size
+      }
+    }, {}),
     extend: {
       fontFamily: themeFontFamilies.reduce((acc, fontFamily) => {
         return {

@@ -1,37 +1,27 @@
-<header class="site-header">
-  <div class="container">
-    <h1 class="school-logo-text float-left"><a href="<?php echo site_url() ?>"><strong>Diesel</strong></a></h1>
-    <a href="<?php echo esc_url(site_url('/search')); ?>" class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></a>
-    <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
-    <div class="site-header__menu group">
+<header
+  data-block-type="diesel-header"
+  class="has-tailwind"
+>
+  <?php 
+    $wrapper_classes[] = isset($attributes['bgColorSlug']) ? 'bg-' . $attributes['bgColorSlug'] : 'bg-brown';
+    $wrapper_classes[] = 'is-layout-constrained';
+    $wrapper_classes[] = 'px-6';
+    $wrapper_classes[] = 'md:px-8';
+  ?>
 
-      <nav class="main-navigation">
-        <ul>
-          <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 16) {
-                echo 'class="current-menu-item"';
-              } ?>>
-            <a href="<?php echo site_url('/about-us') ?>">About
-              Us
-            </a>
-          </li>
-          <li <?php if (get_post_type() == 'program') {
-                echo 'class="current-menu-item"';
-              } ?>><a href="<?php echo get_post_type_archive_link('program') ?>">Programs</a>
-          </li>
-          <li <?php if (get_post_type() == 'event' or is_page('past-events')) {
-                echo 'class="current-menu-item"';
-              }  ?>><a href="<?php echo get_post_type_archive_link('event'); ?>">Events</a>
-          </li>
-          <li <?php if (get_post_type() == 'campus') {
-                echo 'class="current-menu-item"';
-              } ?>><a href="<?php echo get_post_type_archive_link('campus'); ?>">Campuses</a>
-          </li>
-          <li <?php if (get_post_type() == 'post') {
-                echo 'class="current-menu-item"';
-              } ?>><a href="<?php echo site_url('/blog'); ?>">Blog</a>
-          </li>
-        </ul>
-      </nav>
+  <div class="<?php echo implode(' ', $wrapper_classes) ?>">
+    <div class="flex items-center justify-between text-white min-h-[80px] alignwide relative">
+      <?php 
+        foreach($block->inner_blocks as $inner_block) {
+          if ($inner_block->block_type->name == 'core/navigation') {
+            echo $inner_block->render();
+          }
+        }
+      ?>
+      <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 font-bold tracking-widest text-<?php echo isset($attributes['logoTextSize']) ? $attributes['logoTextSize'] : '2xl' ?>">
+        <?php echo $attributes['logoText'] ?? 'Not Defined'; ?>
+      </div>
     </div>
   </div>
+
 </header>

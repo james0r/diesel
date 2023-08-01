@@ -56,7 +56,7 @@ function EditComponent(props) {
 
   function handleColorChange(colorCode) {
     // from the hex value that the color palette gives us, we need to find its color name
-    const { name, className } = getColorObjectByColorValue(themeColors, colorCode);
+    const { name } = getColorObjectByColorValue(themeColors, colorCode);
     props.setAttributes({ colorName: name });
   }
 
